@@ -1,6 +1,13 @@
-<px-card header-text='Menu 1'>
+<px-card header-text='Engine failure chance'>
 
-    <h3>First Card</h3>
+    <h3>Future probabilities of failure</h3>
+    <px-dropdown id="enginesDropdown" display-value="700101" selected-key="700101"><px-dropdown-content extend-dropdown='true' extend-dropdown-by='25' max-cont-character-width='10' items="{{engines}}" ></px-dropdown-content></px-dropdown>
+    <px-data-table filterable table-data="{{engineData}}" striped="true">
 
+        <px-data-table-column label="Flights from now" name="itearation"></px-data-table-column>
+        <px-data-table-column label="City" name="city"></px-data-table-column>
+        <px-data-table-column label="Repair cost" name="repairCost"></px-data-table-column>
+        <px-data-table-column label="Probability of failure" name="probabilityOfReachingThreshold"></px-data-table-column>
+    </px-data-table>
 
 </px-card>

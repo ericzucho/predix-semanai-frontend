@@ -1,5 +1,16 @@
-<px-card header-text='Menu 2'>
-    <h3>Second Card</h3>
+<px-card header-text='Engine temperatures'>
+    <h3>Minutes above temperature threshold trend</h3>
+    <h4>This chart shows how the amount of time above the threshold (263°) changes. It starts with the current accumulated time above the temperature threshold and goes up to 50 flights in the future.</h4>
+    <h4>The orange line is the identified average of accumulated time when engines start to fail (close to 12,000 minutes). If the line is not visible, the engine is far from reaching the threshold.</h4>
+    <h4>Select an engine:</h4>
+    <px-dropdown id="enginesDropdown" display-value="700101" selected-key="700101"><px-dropdown-content extend-dropdown='true' extend-dropdown-by='25' max-cont-character-width='10' items="{{engines}}" ></px-dropdown-content></px-dropdown>
+    <!--<px-chart data="{{engineData}}" zoom-controls="hidecontrols" tooltip-type="normal"><px-chart-series-line units="m" id='hpt-acc-position-cruise' data="{{engineData}}"></px-chart-series-line></px-chart>-->
+
+    <px-simple-line-chart width="auto" min="{{minY}}" max="{{maxY}}" columns="25" rows="3" line-data="{{engineData}}" threshold="11993" min-label="{{minY}}" max-label="{{maxY}}"></px-simple-line-chart>
+
+    <div ng-repeat="value in arraySample">
+        <h1>{{value}}</h1>
+    </div>
 
 </px-card>
 

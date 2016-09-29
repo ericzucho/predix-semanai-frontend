@@ -29,17 +29,23 @@ define(['angular', 'angular-ui-router'], function(angular) {
                     }]
                 }
             })
-            .state('first', {
+            .state('failure_chance', {
                 //parent: 'secure',
-                url: '/first',
+                url: '/failure_chance',
                 templateUrl: 'views/first-card.html',
                 controller: 'SampleCtrl'
             })
-            .state('second', {
+            .state('temperatures', {
                 //parent: 'secure',
-                url: '/second',
+                url: '/temperatures',
                 templateUrl: 'views/second-card.html',
                 controller: 'SampleCtrl2'
+            })
+            .state('critical', {
+                //parent: 'secure',
+                url: '/critical',
+                templateUrl: 'views/third-card.html',
+                controller: 'SampleCtrl3'
             });
 
 
